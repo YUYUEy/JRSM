@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>施策一括登録画面</title>
+		<style type="text/css">
+			*{
+				padding: 0;margin: 0;
+			}
+			a{text-decoration: none;}
+			.main{
+				border: 1px solid #ccc;width: 500px;height: 300px;margin: 0 auto;
+				border-collapse: collapse;
+			}
+			.main tr td:nth-child(1){
+				text-align: right;width: 100px;padding-right: 10px;
+			}
+			.main tr td input[type=text]{
+				width: 100px;
+			}
+			.main tr td button{
+				width: 60px;  border: 1px solid #999;
+			}
+			.main tr td button a{
+				width: 100%; height: 100%;display: block;
+			}
+			.main tr td:nth-child(2) label{
+				width:120px;display: inline-block;
+			}
+			/*.main tr td{
+				border: 1px solid #999;box-sizing: border-box;
+			}*/
+		</style>
+	</head>
+	<body>
+			<table class="main" border="0" cellspacing="0" cellpadding="0">
+				<tr><th colspan="2"><h2>施策一括登録画面</h2></th></tr>
+				<tr>
+					<td><label for="products">商品</label></td>
+					<td><select id="products">
+					<option value="テレビ">テレビ</option>
+	                <option value="DVD">DVD</option>
+	                <option value="冷蔵庫">冷蔵庫</option>
+	                <option value="ランドリー">ランドリー</option>
+	                <option value="レンジ">レンジ</option>
+	                <option value="調理">調理</option>
+	                <option value="パソコン">パソコン</option>
+	                <option value="クリーン">クリーン</option>
+	                <option value="エアコン">エアコン</option>
+	                <option value="ＬＥＤ">ＬＥＤ</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="timeSpan">期间</label></td>
+					<td><input id="timeSpan" type="text" value="2017-10-01"/>~<input  type="text" value="2017-10-14"/></td>
+				</tr>
+				<tr>
+					<td><label for="eventTypes">施策カテゴリ</label></td>
+					<td><select id="eventTypes">
+					<option value="一斉拡販DAY">一斉拡販DAY</option>
+                	<option value="新製品発売">新製品発売</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="doTypes">施策明細</label></td>
+					<td><select id="doTypes">
+					<option value="一斉拡販DAY">一斉拡販DAY</option>
+                	<option value="新製品発売">新製品発売</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><span>店舗指定</span></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="radio" id="rad1" /><label for="rad1">東芝店舗格付</label>
+						<select>
+							<option selected value="パートナーA店">パートナーA店</option>
+			                <option value="パートナーB店">パートナーB店</option>
+			                <option value="すべて">すべて</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="radio" id="rad2" /><label for="rad2">得意店舗格付</label><button><a href="login_shop.html" target="_blank">登録</a></button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="radio" id="rad3" /><label for="rad3">企業・エリア</label><button><a href="login_shop2.html" target="_blank">登録</a></button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="radio" id="rad4" /><label for="rad4">店舗リスト取込</label><button>取込</button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="登録"/><input type="submit" value="关闭"/></td>
+				</tr>
+			</table>
+	</body>
+</html>
