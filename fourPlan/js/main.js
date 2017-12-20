@@ -1,6 +1,6 @@
 (function(){
 	var datepicker = window.datepicker;
-	datepicker.buildUi = function(year,month){
+	datepicker.buildUi = function(year,month,shopList){
 		window.monthData = datepicker.getMonthData(year,month);
 		 if(monthData[91].showDate <10){
 		 	monthData.splice(91,7)
@@ -19,7 +19,7 @@
 								'<thead>'+
 									'<tr class="threeMonth">'+
 										'<th class="supplyHead" rowspan="2" id="shop_list">店舗'+
-										'<ul id="shop_man"><li>営業氏名</li><li>東芝 太郎</li></ul>'+
+										'<ul id="shop_man"><li>営業氏名</li><li id="his_name">東芝 太郎</li></ul>'+
 										'</th>'+
 										'<th colspan="28" id="prevMonth"><span></span></th>'+
 										'<th colspan="28" id="thisMonth"><span></span></th>'+
@@ -28,8 +28,13 @@
 									'<tr class="fourteen">'+
 //										'<th class="supplyHead"></th>'+
 										'<th colspan="7" class="firstW"><span></span>w<div class="bor"></div>'+
-		'<div class="showEdit"><a class="toClose"><i class="icon iconfont icon-xinzeng"></i></a><ul class="the_info"><li class="the_title">111</li><li class="the_time">111</li><li class="the_event">222</li></ul>'+
-		'<div class="editAndDel"><button class="toDel">删除</button><button class="toEdit">编辑</button></div></div>'+
+		'<div class="showEdit"><a class="toClose"><i class="icon iconfont icon-xinzeng"></i></a><ul class="the_info"><li class="the_title">111</li><li class="the_time">111</li><li class="the_event">222</li>'+
+		'<li class="the_copy"><label>複写至: <select name="" id="toShop">';
+			for (var i=0; i< 5; i++) {
+				html += '<option value="">'+ String.fromCharCode(shopList +i) +'店</option>'
+			};
+		html += '</select></label><button class="copySave">确定</button><button class="copyCancel">取消</button></li></ul>'+
+		'<div class="editAndDel"><button class="toDel">删除</button><button class="toCopy">複写</button><button class="toEdit">编辑</button></div></div>'+
 										'</th>'+
 										'<th colspan="7"><span></span>w</th>'+
 										'<th colspan="7"><span></span>w</th>'+
@@ -48,7 +53,7 @@
 								'<tbody class="context">' ;
 								
 									for(var i=0; i<5; i++){
-										html +=	'<tr class="shopEvent"><td class="supplyHead">'+ String.fromCharCode(65+i) +'店</td>';
+										html +=	'<tr class="shopEvent"><td class="supplyHead">'+ String.fromCharCode(shopList +i) +'店</td>';
 											for(var j=0; j<12; j++){
 												html += '<td colspan="7"></td>';
 											}

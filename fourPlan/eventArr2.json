@@ -1,0 +1,39 @@
+[
+	{
+		"startTime": "2017-11-25",
+		"endTime": "2017-12-21",
+		"whichShop": "D店",
+		"eventType": "勉強会",
+		"str": ["TV", "空调", "冰箱", "洗衣机"],
+		"background": "red",
+		"code": 6363
+	},
+	{
+		"startTime": "2017-12-26",
+		"endTime": "2018-01-23",
+		"whichShop": "B店",
+		"eventType": "勉強会",
+		"str": ["PC", "冰箱", "洗衣机"],
+		"background": "orange",
+		"code": 8942
+	},
+	{
+		"startTime": "2017-12-15",
+		"endTime": "2018-01-13",
+		"whichShop": "B店",
+		"eventType": "山積み",
+		"str": ["TV", "空调", "冰箱", "洗衣机"],
+		"background": "orange",
+		"code": 6680
+	},
+	
+	{
+		"startTime": "2018-01-11",
+		"endTime": "2018-02-13",
+		"whichShop": "B店",
+		"eventType": "山積み",
+		"str": ["PC", "冰箱", "洗衣机"],
+		"background": "green",
+		"code": 7698
+	}
+]

@@ -89,12 +89,12 @@ textarea {
 
 /* reset--end */
 .all_content{
-	width: 800px; margin: 0 auto; padding: 10px; height: 800px;
+	width: 1000px; margin: 0 auto; padding: 10px; height: 800px;
 	border: 1px solid #ccc;
 	/*overflow: hidden;*/
 }
 .all_content .nav {
-    width: 800px;
+    width: 1000px;
     margin: 0 auto 20px;
     position: relative;
 }
@@ -109,7 +109,8 @@ textarea {
 	width: 80px;
 }
 .all_content .nav .condition button{
-	width: 100px;height: 20px;border: 1px solid #999; margin-left: 5px;
+	/*width: 120px;*/
+	height: 20px;border: 1px solid #999; margin-left: 5px;border-radius: 3px;
 }
 
 .all_content .nav .btnGroup2{
@@ -134,14 +135,14 @@ textarea {
     width: 200px;
 }
 .all_content .nav .btnGroup2 table tr td select{
-    width: 180px;
+    width: 180px; border-radius: 3px;
 }
 .all_content .nav .btnGroup2 .jiansuo{
-    width: 60px;height: 24px;border: 1px solid #ccc;
+    width: 60px;height: 24px;border: 1px solid #ccc; border-radius: 3px;
 }
 
 .all_content .nav .event_content{
-	width: 800px; height: 100px; overflow: hidden; position: relative;
+	width: 800px; height: 70px; overflow: hidden; position: relative;
 }
 .all_content .nav .event_content .status{
 	width: 160px; height: 70px; float: left;
@@ -169,58 +170,40 @@ textarea {
 .all_content .nav .event_content .btnGroup3 .sub_title{
 	float: left;display: block;
 }
-/*.all_content .nav .event_content .btnGroup3 button {
-    width: 70px;height: 30px;border: 1px solid #999; margin-left: 5px;
-}*/
+
 .all_content .nav .event_content .btnGroup3>select {
-    width: 70px;height: 30px;border: 1px solid #999; margin-left: 5px; 
-    appearance:none;
+    width: 70px;height: 30px;border: 1px solid #999; margin-left: 5px; border-radius: 3px;
+    /*appearance:none;
 	-moz-appearance:none;
-	-webkit-appearance:none;
+	-webkit-appearance:none;*/
 }
 .all_content .nav .btnGroup3 #btn1{
 	width: 70px;height: 30px;border: 1px solid #999; margin-left: 5px; display: inline-block;
 	background: #ff0000; position: relative;
 }
-/*.all_content .nav .event_content .btnGroup3 #btn1 input {
-    height: 30px;width: 50px; box-sizing: border-box; background: #f00;  border: none;
-    position: absolute; left: 0; z-index: 11;
-}
-.all_content .nav .event_content .btnGroup3 #btn1 select {
-    height: 30px;width: 70px; box-sizing: border-box; background: #f00; border: none;
-    position: absolute;left: 0;
-    appearance:none;
-	-moz-appearance:none;
-	-webkit-appearance:none;
-}*/
 
 .all_content .nav .btnGroup3 #btn2{  background: #ffcc00;}
 .all_content .nav .btnGroup3 #btn3{  background: #00ff99;}
 .all_content .nav .btnGroup3 #btn4{  background: #00ccff; width: 80px;}
-.all_content .nav .btnGroup3 #btn5{  background: #00ccff;}
+.all_content .nav .btnGroup3 #btn5{  background: #00ffff;}
 
 .all_content .nav .event_content .btnGroup3 .innerBtn{
 	width: 190px; height: 40px;line-height: 40px; 
 	border-left: 1px solid #999;float: right; padding-left: 5px;
 }
-.all_content .nav .event_content .btnGroup3 .innerBtn button{
+.all_content .nav .event_content .btnGroup3 .innerBtn select{
 	width: 90px;height: 30px;border: 1px solid #999; float: right; background: #0f3; margin: 5px;
-}
-.all_content .nav .event_content .last_button{
-	width: 300px; height: 30px; position: absolute; bottom: 5px; right: 0;
-}
-.all_content .nav .event_content .last_button button{
-	width: 140px;height: 30px;border: 1px solid #999; margin-left: 5px;
+	border-radius: 3px;
 }
 
 .all_content .wraper {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
     text-align: center;
 }
 
 .all_content .wraper .tab table {
-    border-collapse: collapse; width: 800px;
+    border-collapse: collapse; 
 }
 .all_content .wraper .tab table th,
 .all_content .wraper .tab table td {
@@ -230,6 +213,7 @@ textarea {
 .all_content .wraper .tab table th {
     height: 30px;
     background: #0cf;
+    min-width: 49px;
 }
 .all_content .firstW{
 	position: relative;
@@ -243,6 +227,7 @@ textarea {
     pointer-events: none;
     cursor: default;
 }
+/*---------shop_man-----------*/
 .all_content .wraper .tab table #shop_list{
 	position: relative; 
 }
@@ -259,9 +244,9 @@ textarea {
 	background: #ccc; height: 224px; line-height: 226px;
 	 box-sizing: border-box;
 }
-
+/*---------bottom -----*/
 .all_content .bottom {
-    width: 800px;
+    width: 1000px;
     margin: 20px auto;
     position: relative;
 }
@@ -279,7 +264,12 @@ textarea {
 .all_content .bottom .btnGroup li {
     flex: 1;height: 40px;line-height: 40px;
 }
-
+.all_content .bottom .btnGroup li select{
+    width: 100px; border-radius: 3px;
+}
+.all_content .bottom .btnGroup li button{
+    border-radius: 3px;border: 1px solid #999; 
+}
 .all_content .bottom .btnGroup .last_choose{
 	flex: 2;
 }
@@ -302,11 +292,11 @@ textarea {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 500px;
     height: 300px;
-    margin-left: -200px;
+    margin-left: -250px;
     margin-top: -150px;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     border: 8px solid #E8E9F7;
     background-color: white;
@@ -320,7 +310,7 @@ textarea {
 }
 .all_content .firstW .bor{
 	border: 1px solid #f45;
-	width: 698px;height: 224px;
+	width: 638px;height: 224px;
 	position: absolute;top: 29px;left: -1px;z-index: 111;overflow: hidden;
 }
 
@@ -336,14 +326,6 @@ textarea {
 }
 .all_content .showEvent:hover {
     color: #fff; cursor: pointer; box-shadow: 5px 5px 3px #999;
-}
-.all_content .showEvent .del {
-    display: block; 
-    /*float: right;*/
-   position: absolute;top: 0;right: 0;
-}
-.all_content .showEvent .del i{
-    font-size: 12px;
 }
 
 .all_content #show #chooseTime {
@@ -376,16 +358,29 @@ textarea {
 }
 
 .all_content #show #chooseTime #chooseEvent {
-    width: 300px;
+    width: 400px;
     line-height: 24px;
 }
 .all_content #show #chooseTime #chooseEvent label{
     /*background: pink;*/
     display: inline-block;width: 40px;
 }
+.all_content #show #chooseTime #chooseEvent select {
+    width: 270px; border-radius: 3px;
+}
+.all_content #show #chooseTime #chooseEvent input[type='date']{
+    width: 120px;
+}
+.all_content #show #chooseTime #chooseEvent #bolang{
+    width: 20px; display: inline-block; text-align: center;
+}
 .all_content #show #chooseTime #chooseEvent #toast{
     color: red;display: none;
 }
+.all_content #show #chooseTime #chooseEvent #the_others{
+    display: none;
+}
+
 .all_content #show #chooseTime #chooseEvent tr td:nth-child(1) {
     width: 60px;
 }
@@ -403,25 +398,40 @@ textarea {
 /*编辑和删除*/
 .showEdit{
 	width: 300px; height: 200px; border: 1px solid #aaa; border-radius: 5px; background: #fff;
-	position: absolute; top: 29px; right: 51px; z-index: 1000;
+	position: absolute; top: 29px; left: 0; z-index: 1000;
 	display: none;
 }
 .showEdit .the_info{
 	width: 100%; text-align: left; padding: 20px; box-sizing: border-box;
 }
+.showEdit .the_info li{
+	height: 30px;
+}
 .showEdit .the_info .the_title{
 	font-size: 18px; font-weight: bold;
 }
+.showEdit .the_info .the_copy {
+	display: none;
+}
+.showEdit .the_info .the_copy select{
+	width: 60px; height: 24px; border: 1px solid #aaa; border-radius: 5px;
+}
+.showEdit .the_info .the_copy button{
+	margin-left: 5px;
+}
 .showEdit .editAndDel{
-	width: 100%;height: 80px; border-top: 1px solid #aaa; position: absolute; bottom: 0; left: 0;
+	width: 100%;height: 60px; border-top: 1px solid #aaa; position: absolute; bottom: 0; left: 0;
 }
 
-.showEdit .editAndDel .toEdit, .showEdit .editAndDel .toDel{
+.showEdit .editAndDel .toEdit, .showEdit .editAndDel .toDel, .showEdit .editAndDel .toCopy{
 	width: 80px; height: 40px; border: 1px solid #aaa; border-radius: 5px; background: #fff;
-	float: right; margin: 20px 10px;
+	float: right; margin: 10px 10px;
+}
+.showEdit .editAndDel button:hover{
+	border: 1px solid #148ef5;
 }
 .showEdit .editAndDel .toEdit{
-	width: 80px; height: 40px; border: 1px solid #aaa; border-radius: 5px; background: #148ef5;
+	background: #148ef5; color: #fff;
 }
 .showEdit .toClose{
 	position: absolute;top: 5px; right: 5px; cursor: pointer; font-size: 22px; 
