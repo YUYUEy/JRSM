@@ -1,0 +1,103 @@
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+.form-control{
+	border-radius: 5px; height:30px;
+}
+.content{
+	margin:0; padding:0; min-height:330px; margin-bottom:10px;
+}
+.content #calendar {
+	border-collapse: collapse; border:1px solid #E6E5E6;
+	font-family: PingFangSC-Regular;
+	font-size: 12px;
+}
+.content #calendar tr td{
+	min-width:30px; border:1px solid #E6E5E6;
+	white-space:nowrap; text-align:center;
+	height: 30px; box-sizing: border-box;
+	font-family: PingFangSC-Regular;
+	font-size: 12px;
+}
+.content #calendar thead .theHead{
+	background: #F9F9F9;; color: #666666;
+}
+.content #calendar tbody .the_shopman2{
+	width:80px !important;background: #F9F9F9; border:0px; text-align:left;
+}
+.content #calendar tbody .theShop{
+	width:150px !important; background: #F9F9F9; text-align:left;color: #121212;
+}
+.content #calendar tbody .theShop span{
+	width:150px;
+	display:inline-block;
+   	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+    cursor: default;
+}
+
+.content #calendar tbody .the_shopman2 span{
+	width:80px;
+	display:inline-block;
+   	text-overflow: ellipsis; 
+	white-space: nowrap;
+	overflow: hidden;
+    cursor: default;
+}
+
+.content #calendar tbody td i{
+	font-size: 30px; position: relative;
+	line-height: 30px;
+}
+.content #calendar tbody td i>span{
+	font-size: 12px; color: #fff;
+	position: absolute; top: 2px;left: 9px;
+}
+.content #calendar tbody td i .the_info{
+	/* width: 200px; height: 20px;  */
+	border: 1px solid #ccc; border-radius: 3px; overflow: hidden; text-overflow: ellipsis;
+	line-height:20px;color: #fff; display:none; z-index:111; text-align:left;
+	position: absolute; top: 5px; left: 30px; padding:0px 5px; 
+}
+.content #calendar tbody td i:hover .the_info{
+	display:block;
+}
+
+#the_status li{
+	float:left; margin-left:10px;
+	color: #666666;
+	font-family: PingFangSC-Regular;
+	font-size: 12px;
+}
+#the_status li i{
+	font-size:16px; line-height:12px;
+}
+#the_status .the_triangle i{
+	/* font-size:18px; */
+	/*  display:block; margin-top: 10px; float:right; */
+}
+.content #calendar tbody td .icon-triangle-copy:before {
+    content: "\e605";
+    display: block;
+    margin-top: 5px;
+}
