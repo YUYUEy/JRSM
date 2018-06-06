@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>date-picker</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	
+</head>
+
+<body>
+	<div class="nav">
+		<h2>個人用出退勤カレンダー</h2>
+		<ul class="choose">
+			<li>社员番号
+				<input type="text" placeholder="1705">
+			</li>
+			<li>社员名
+				<input type="text" placeholder="test">
+			</li>
+		</ul>
+		<ul class="btnGroup">
+			<li>月份
+				<select name="" id="inputMonth">
+					<option value="">2017-06</option>
+					<option value="">2017-07</option>
+					<option value="">2017-08</option>
+					<option value="">2017-09</option>
+					<option value="">2017-10</option>
+					<option value="" selected>2017-11</option>
+					<option value="">2017-12</option>
+					<option value="">2018-01</option>
+					<option value="">2018-03</option>
+					<option value="">2018-04</option>
+				</select>
+			</li>
+			<li>
+				<button id="shang"><<先月</button>
+			</li>
+			<li>
+				<button id="xia">翌月>></button>
+			</li>
+			<li>
+				<button>周表示</button>
+			</li>
+			<li>
+				<button>四半期施策</button>
+			</li>
+
+		</ul>
+	</div>
+
+	<div class="header">
+		<a href="#" class="prev">&lt;</a>
+		<span id="showMonth">2017-11</span>
+		<a href="#" class="next">&gt;</a>
+	</div>
+	<div class="wraper" id="wrap">
+		<!--<div class="tab">
+			<table>
+					<thead>
+						<tr>
+							<th>日</th>
+							<th>一</th>
+							<th>二</th>
+							<th>三</th>
+							<th>四</th>
+							<th>五</th>
+							<th>六</th>
+						</tr>
+					</thead>
+					<tbody>						
+					</tbody>				
+			</table>
+		</div> -->
+	</div>
+
+	<!-- 浮层框架开始 -->
+	<div id="bg"></div>
+	<div id="show">
+		<div id="chooseTime">
+			<button id="btnclose">关闭</button>
+			<h3>新增日程</h3>
+			<table id="chooseEvent">
+				<tr>
+					<td>地点</td>
+					<td>
+						<select name="" id="startShop">
+							<option value="">A店</option>
+							<option value="">B店</option>
+							<option value="">C店</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>起止时间</td>
+					<td>
+						<select name="" id="startTime">
+							<option value="">8:00</option>
+							<option value="">10:00</option>
+							<option value="">12:00</option>
+						</select>
+						至
+						<select name="" id="endTime">
+							<option value="">8:00</option>
+							<option value="">10:00</option>
+							<option value="">12:00</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+
+			<button id="btnSave">保存</button>
+		</div>
+
+	</div>
+	<!-- 浮层框架结束-->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<label for="day1">开始日</label>
+	<input type="date" id="day1" value="2014-01-13">
+	<br>
+	<label for="day2">结束日</label>
+	<input type="month" id="day2">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<script type="text/javascript" src='js/data.js'></script>
+	<script type="text/javascript" src='js/main.js'></script>
+
+	<script type="text/javascript">			
+
+		$("#wrap").html(datepicker.buildUi());
+
+		var year = $("#showMonth").html().split("-")[0];
+		var month = $("#showMonth").html().split("-")[1];
+		var eventArr = [];
+		//获取下拉框的值并且刷新日历
+		$("#inputMonth").change(function () {
+			var optText = $("#inputMonth  option:selected").text().split('-');
+			// console.log(optText);
+			year = optText[0];
+			month = optText[1];
+			$("#showMonth").html(year + "-" + month);
+			$("#wrap").html(datepicker.buildUi(year, month));
+			addPlan($(".context"),"click",".plan");
+			addDone($(".context"),"click",".done");
+			remove($(".context"),"click",".del");
+		})
+
+		$(".prev").click(function () {
+			prevMonth();
+			addPlan($(".context"),"click",".plan");
+			addDone($(".context"),"click",".done");
+			remove($(".context"),"click",".del");
+		});
+		$(".next").click(function () {
+			nextMonth();
+			addPlan($(".context"),"click",".plan");
+			addDone($(".context"),"click",".done");
+			remove($(".context"),"click",".del");
+		});
+		function prevMonth() {
+			month--;
+			if (month <= 0) {
+				year--;
+				month = 12;
+			}
+			month = month < 10 ? '0' + month : month;
+			$("#showMonth").html(year + "-" + month);
+			$("#wrap").html(datepicker.buildUi(year, month));
+		};
+		function nextMonth() {
+			month++;
+			if (month >= 13) {
+				year++;
+				month = 1;
+			}
+			month = month < 10 ? '0' + month : month;
+			$("#showMonth").html(year + "-" + month);
+			$("#wrap").html(datepicker.buildUi(year, month));
+		};
+		
+		var thisParent ;
+		function addPlan(one, two, three) {	//点击添加planevent
+			one.on( two, three, function () {
+				var planTitle = prompt("plan title:");
+				if (planTitle) {
+					var thisDate = $(this).parent().parent().parent().find(".showDate").html();
+					$("<h4><span id='planEvent'>" + planTitle + '-' + thisDate + "</span><a href='javasript:;' class='del'>删除</a></h4>").appendTo($(this).parent());
+					$("#planEvent").title = planTitle;		//???
+				}
+			})
+		}		
+		function addDone(aaa,bbb,ccc) {	//点击添加doneevent
+			aaa.on(bbb, ccc, function () {
+				showdiv();
+				var thisDate = $(this).parent().parent().parent().find(".showDate").html();
+				thisParent = $(this).parent()[0];
+				eventArr.push(thisDate);
+			});
+		}
+		//点击删除event
+		function remove(ddd,eee,fff){
+			ddd.on(eee, fff, function () {
+				$(this).parent().remove()
+			});
+		}
+		addPlan($(".context"),"click",".plan");
+		addDone($(".context"),"click",".done");
+		remove($(".context"),"click",".del");
+		
+		$("#btnclose").click(function () {	//close
+			hidediv()
+		});
+		$("#btnSave").click(function () {	//save
+			hidediv();
+			// console.log(eventArr.pop());
+			var startShop = $("#startShop  option:selected").text();
+			var startTime = $("#startTime  option:selected").text();
+			var endTime = $("#endTime  option:selected").text();
+			$("<h4><span>" + startTime+ '~'+endTime+':'+startShop + "</span><a href='javasript:;' class='del'>删除</a></h4>").appendTo(thisParent);
+
+		});
+		function showdiv() {
+			$("#bg").show();
+			$("#show").show();
+			$("html,body").css("overflow", "hidden");
+		}
+		function hidediv() {
+			$("#bg").hide();
+			$("#show").hide();
+			$("html,body").css("overflow", "auto");
+		}
+
+		
+	</script>
+</body>
+
+</html>

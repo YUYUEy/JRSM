@@ -1,0 +1,320 @@
+/*公共样式、样式重置*/
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+ul li,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+a:hover {
+    color: #f22e00;
+}
+
+input {
+    outline: none;
+}
+
+th,
+i,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    color: #333;
+    font: 12px/22px Tahoma, Arial ;
+    background: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    word-wrap: break-word;
+    resize: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+/* reset--end */
+
+.nav {
+    width: 700px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.nav .choose {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.nav .choose input {
+    background: #e4e4e4;
+    width: 100px;
+    border: 1px solid #ccc;
+    line-height: 20px;
+}
+
+.nav .choose li {
+    float: left;
+}
+
+.nav .btnGroup {
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.nav .btnGroup li {
+    flex: 1;
+}
+
+.nav .btnGroup li button {
+    line-height: 20px;
+    width: 80%;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.header {
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background: #fefefe;
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 微软雅黑;
+}
+
+.header a {
+    text-decoration: none;
+    color: #333;
+}
+
+.header .prev {
+    float: left;
+}
+
+.header .next {
+    float: right;
+}
+
+.wraper {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wraper .tab table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.wraper .tab table th,
+.wraper .tab table td {
+    border: 1px solid #999;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.wraper .tab table th {
+    width: 14%;
+    height: 30px;
+    background: #e4e4e4;
+}
+
+.wraper .tab table td {
+    min-width: 100px;
+    height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.wraper .tab table td .showDate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffcc;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 微软雅黑;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #999;
+}
+.wraper .tab table td ul{
+    width: 100%;height: 70px;
+}
+.wraper .tab table td ul li{
+    width: 50%;height: 70px;line-height: 20px;
+    float: left;position: relative;
+}
+.wraper .tab table td ul #planRow{
+    border-right: 1px solid #999;box-sizing: border-box;
+}
+.wraper .tab table td .plan, .wraper .tab table td .done {
+    display: block;
+    width: 100%;
+    height: 20px;   
+    border-bottom: 1px solid #ccc;
+}
+.wraper .tab table td .plan:hover, .wraper .tab table td .done:hover {
+    cursor: pointer;
+}
+
+.wraper .tab table td ul li h4 {
+    height: 20px;
+    font-weight: 100;
+}
+
+.wraper .tab table td ul li h4>span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 60px;
+    display: block;
+    float: left;
+}
+
+.wraper .tab table td h4>a {
+    display: block;
+    float: right;
+}
+
+#bg {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 101;
+    -moz-opacity: 0.3;
+    opacity: .30;
+    filter: alpha(opacity=30);
+}
+
+#show {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 560px;
+    height: 400px;
+    margin-left: -280px;
+    margin-top: -200px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 8px solid #E8E9F7;
+    background-color: white;
+    z-index: 1002;
+}
+
+#show #chooseTime {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    background: pink;
+    position: relative;
+}
+
+#show #chooseTime {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: pink;
+    position: relative;
+}
+
+#show #chooseTime h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#show #chooseTime #btnclose {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#show #chooseTime #btnSave {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    width: 80px;
+    height: 40px;
+    background: #148ef5;
+    border: 1px solid #148ef5;
+    border-radius: 3px;
+}
+
+#show #chooseTime #chooseEvent {
+    width: 100%;
+    line-height: 30px;
+}
+
+#show #chooseTime #chooseEvent tr td:nth-child(1) {
+    width: 60px;
+}
