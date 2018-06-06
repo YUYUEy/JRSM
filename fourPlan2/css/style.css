@@ -1,0 +1,435 @@
+/*公共样式、样式重置*/
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+ul li,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+a:hover {
+    color: #f22e00;
+}
+
+input {
+    outline: none;
+}
+
+th,
+i,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    color: #333;
+    font: 12px/22px Tahoma, Arial ;
+    background: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    word-wrap: break-word;
+    resize: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+/* reset--end */
+.all_content{
+	width: 1000px; margin: 0 auto; padding: 10px; height: 800px;
+	border: 1px solid #ccc;
+	/*overflow: hidden;*/
+}
+.all_content .nav {
+    width: 1000px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+.all_content .nav .the_title{
+	font-weight: bolder;
+	width: 800px; 
+}
+.all_content .nav .condition{
+	margin: 10px auto;
+}
+.all_content .nav .condition input{
+	width: 80px;
+}
+.all_content .nav .condition button{
+	width: 100px;height: 20px;border: 1px solid #999; margin-left: 5px;border-radius: 3px;
+}
+
+.all_content .nav .btnGroup2{
+    width: 800px;height: 100px; border: 1px solid #ccc;overflow: hidden;
+}
+.all_content .nav .btnGroup2 p{
+    height: 26px; background: #eee; line-height: 26px; padding-left: 5px;
+}
+.all_content .nav .btnGroup2 p a{
+    float: right; margin-right: 10px;
+}
+.all_content .nav .btnGroup2 table{
+    text-align: right; margin-left: 10px; margin-top: 5px;
+}
+.all_content .nav .btnGroup2 table tr {
+    height: 30px;
+}
+.all_content .nav .btnGroup2 table tr td:nth-child(2n-1){
+    width: 60px;
+}
+.all_content .nav .btnGroup2 table tr td:nth-child(2n){
+    width: 200px;
+}
+.all_content .nav .btnGroup2 table tr td select{
+    width: 180px; border-radius: 3px;
+}
+.all_content .nav .btnGroup2 .jiansuo{
+    width: 60px;height: 24px;border: 1px solid #ccc; border-radius: 3px;
+}
+
+.all_content .nav .event_content{
+	width: 800px; height: 100px; overflow: hidden; position: relative;
+}
+.all_content .nav .event_content .status{
+	width: 160px; height: 70px; float: left;
+}
+.all_content .nav .event_content .status .smallIcon{
+	float: left;text-align: center;line-height: 22px; width: 50px;
+}
+.all_content .nav .event_content .status  p{
+	font-size: 12px; float: left;
+}
+.all_content .nav .event_content .status .smallIcon i{
+	font-size: 22px;
+}
+.all_content .nav .event_content .status .smallIcon i:nth-child(1){
+	color: #00c;
+}
+.all_content .nav .event_content .status .smallIcon i:nth-child(2){
+	color: #f0f;
+}
+
+.all_content .nav .event_content .btnGroup3 {
+    width: 630px; height: 40px; line-height: 40px;
+    float: left; border: 1px solid #999; margin-top: 10px; padding-left: 5px;
+}
+.all_content .nav .event_content .btnGroup3 .sub_title{
+	float: left;display: block;
+}
+
+.all_content .nav .event_content .btnGroup3>select {
+    width: 70px;height: 30px;border: 1px solid #999; margin-left: 5px; border-radius: 3px;
+    /*appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;*/
+}
+.all_content .nav .btnGroup3 #btn1{
+	width: 70px;height: 30px;border: 1px solid #999; margin-left: 5px; display: inline-block;
+	background: #ff0000; position: relative;
+}
+
+.all_content .nav .btnGroup3 #btn2{  background: #ffcc00;}
+.all_content .nav .btnGroup3 #btn3{  background: #00ff99;}
+.all_content .nav .btnGroup3 #btn4{  background: #00ccff; width: 80px;}
+.all_content .nav .btnGroup3 #btn5{  background: #00ffff;}
+
+.all_content .nav .event_content .btnGroup3 .innerBtn{
+	width: 190px; height: 40px;line-height: 40px; 
+	border-left: 1px solid #999;float: right; padding-left: 5px;
+}
+.all_content .nav .event_content .btnGroup3 .innerBtn select{
+	width: 90px;height: 30px;border: 1px solid #999; float: right; background: #0f3; margin: 5px;
+	border-radius: 3px;
+}
+.all_content .nav .event_content .last_button{
+	width: 300px; height: 30px; position: absolute; bottom: 5px; right: 0; 
+}
+.all_content .nav .event_content .last_button button{
+	width: 140px;height: 30px;border: 1px solid #999; margin-left: 5px; border-radius: 3px;
+}
+
+.all_content .wraper {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.all_content .wraper .tab table {
+    border-collapse: collapse; width: 800px;
+}
+.all_content .wraper .tab table th,
+.all_content .wraper .tab table td {
+    border: 1px solid #999; box-sizing: border-box;
+    /*position: relative;*/
+}
+.all_content .wraper .tab table th {
+    height: 30px;
+    background: #0cf;
+}
+.all_content .firstW{
+	position: relative;
+}
+
+.all_content .wraper .tab table td {
+    height: 45px; position: relative;
+}
+.all_content .wraper .tab table tbody .supplyHead{
+    background: #ccc; width: 100px !important; position: static;
+    pointer-events: none;
+    cursor: default;
+}
+.all_content .wraper .tab table #shop_list{
+	position: relative; 
+}
+
+.all_content .wraper .tab table #shop_list #shop_man{
+	position: absolute; right: 100px;top: -1px; border: 1px solid #999; border-right: none;
+	width: 80px;  overflow: hidden;
+}
+.all_content .wraper .tab table #shop_list #shop_man li:nth-child(1){
+	border-bottom: 1px solid #999; height: 60px; line-height: 60px;
+	background: #0cf;  box-sizing: border-box;
+}
+.all_content .wraper .tab table #shop_list #shop_man li:nth-child(2){
+	background: #ccc; height: 224px; line-height: 226px;
+	 box-sizing: border-box;
+}
+
+.all_content .bottom {
+    width: 1000px;
+    margin: 20px auto;
+    position: relative;
+}
+.all_content .bottom .btnGroup {
+    /*注意先后顺序*/
+    display: -webkit-box; 	
+    display: -moz-box; 
+    display: -ms-flexbox;
+    display: -webkit-flex; 
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.all_content .bottom .btnGroup li {
+    flex: 1;height: 40px;line-height: 40px;
+}
+.all_content .bottom .btnGroup li select{
+    width: 100px; border-radius: 3px;
+}
+.all_content .bottom .btnGroup li button{
+    border-radius: 3px;border: 1px solid #999; 
+}
+.all_content .bottom .btnGroup .last_choose{
+	flex: 2;
+}
+.all_content #bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 101;
+    -moz-opacity: 0.3;
+    opacity: .30;
+    filter: alpha(opacity=30);
+}
+
+.all_content #show {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    margin-left: -250px;
+    margin-top: -150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 8px solid #E8E9F7;
+    background-color: white;
+    z-index: 1002;
+    
+}
+/*展示区域*/
+
+.all_content #mainTd td{
+	height: 0px;border: none;background: transparent;
+}
+.all_content .firstW .bor{
+	border: 1px solid #f45;
+	width: 698px;height: 224px;
+	position: absolute;top: 29px;left: -1px;z-index: 111;overflow: hidden;
+}
+
+.all_content .showEvent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 微软雅黑;
+    width: 100px;height: 25px;line-height: 25px; 
+    overflow: hidden;  text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid #999; 
+}
+.all_content .showEvent:hover {
+    color: #fff; cursor: pointer; box-shadow: 5px 5px 3px #999;
+}
+.all_content .showEvent .del {
+    display: block; 
+    /*float: right;*/
+   position: absolute;top: 0;right: 0;
+}
+.all_content .showEvent .del i{
+    font-size: 12px;
+}
+
+.all_content #show #chooseTime {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.all_content #show #chooseTime h2 {
+    font-weight: bolder;
+}
+
+.all_content #show #chooseTime #btnclose {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.all_content #show #chooseTime #btnSave {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    background: #148ef5;
+    border: 1px solid #148ef5;
+    border-radius: 3px;
+}
+
+.all_content #show #chooseTime #chooseEvent {
+    width: 400px;
+    line-height: 24px;
+}
+.all_content #show #chooseTime #chooseEvent label{
+    /*background: pink;*/
+    display: inline-block;width: 40px;
+}
+.all_content #show #chooseTime #chooseEvent select {
+    width: 270px; border-radius: 3px;
+}
+.all_content #show #chooseTime #chooseEvent input[type='date']{
+    width: 120px;
+}
+.all_content #show #chooseTime #chooseEvent #bolang{
+    width: 20px; display: inline-block; text-align: center;
+}
+.all_content #show #chooseTime #chooseEvent #toast{
+    color: red;display: none;
+}
+.all_content #show #chooseTime #chooseEvent #the_others{
+    display: none;
+}
+
+.all_content #show #chooseTime #chooseEvent tr td:nth-child(1) {
+    width: 60px;
+}
+.all_content #show #chooseTime #chooseEvent #planTime {
+    background: #ccc;
+}
+
+.all_content #show #chooseTime #chooseType {
+    width: 300px;text-align: center;
+    line-height: 24px;
+}
+.all_content #show #chooseTime #chooseType tr:nth-child(1){
+    background: #00ccff;
+}
+/*编辑和删除*/
+.showEdit{
+	width: 300px; height: 200px; border: 1px solid #aaa; border-radius: 5px; background: #fff;
+	position: absolute; top: 29px; right: 51px; z-index: 1000;
+	display: none;
+}
+.showEdit .the_info{
+	width: 100%; text-align: left; padding: 20px; box-sizing: border-box;
+}
+.showEdit .the_info .the_title{
+	font-size: 18px; font-weight: bold;
+}
+.showEdit .editAndDel{
+	width: 100%;height: 80px; border-top: 1px solid #aaa; position: absolute; bottom: 0; left: 0;
+}
+
+.showEdit .editAndDel .toEdit, .showEdit .editAndDel .toDel{
+	width: 80px; height: 40px; border: 1px solid #aaa; border-radius: 5px; background: #fff;
+	float: right; margin: 20px 10px;
+}
+.showEdit .editAndDel .toEdit{
+	width: 80px; height: 40px; border: 1px solid #aaa; border-radius: 5px; background: #148ef5;
+}
+.showEdit .toClose{
+	position: absolute;top: 5px; right: 5px; cursor: pointer; font-size: 22px; 
+	transform: rotate(45deg);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>施策計画入力画面</title>
+		<style type="text/css">
+			*{
+				padding: 0;margin: 0;
+			}
+			.main{
+				border: 1px solid #ccc;width: 600px;height: 360px;margin: 0 auto;
+				border-collapse: collapse;
+			}
+			.main tr td:nth-child(1){
+				text-align: right;width: 100px;padding-right: 10px;
+			}
+			.main tr td input[type=text]{
+				width: 100px;
+			}
+			.main tr td:nth-child(2) label{
+				width:80px;display: inline-block;
+			}
+			
+			.main tr td input[type=submit]{
+				border: 1px solid #999; width: 80px; height: 24px; margin-left: 5px;
+			}
+		</style>
+	</head>
+	<body>
+			<table class="main" border="0" cellspacing="0" cellpadding="0">
+				<tr><th colspan="2"><h2>施策計画入力画面</h2></th></tr>
+				<tr>
+					<td><label for="products">店铺</label></td>
+					<td><select id="products">
+					<option>A店</option>
+					<option>B店</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="timeSpan">期间</label></td>
+					<td><input id="timeSpan" type="text" value="2017-10-01"/>~<input  type="text" value="2017-10-14"/></td>
+				</tr>
+				<tr>
+					<td><label for="eventTypes">施策</label></td>
+					<td><select id="eventTypes">
+					<option value="一斉拡販DAY">一斉拡販DAY</option>
+                	<option value="新製品発売">新製品発売</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="doTypes">カテゴリ</label></td>
+					<td><select id="doTypes">
+					<option value="一斉拡販DAY">一斉拡販DAY</option>
+                	<option value="新製品発売">新製品発売</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="doTypes2">内容</label></td>
+					<td><select id="doTypes2">
+					<option value="一斉拡販DAY">一斉拡販DAY</option>
+                	<option value="新製品発売">新製品発売</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>商品</td>
+					<td>
+						<input type="checkbox" id="a11" /><label for="a11">すべて</label>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="checkbox" id="a12" /><label for="a12">テレビ</label>
+						<input type="checkbox" id="a13" /><label for="a13">DVD</label>
+						<input type="checkbox" id="a14" /><label for="a14">パソコン</label>
+						<input type="checkbox" id="a15" /><label for="a15">メディア</label>
+						<input type="checkbox" id="a16" /><label for="a16">冷蔵庫</label>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="checkbox" id="b12" /><label for="b12">ランドリー</label>
+						<input type="checkbox" id="b13" /><label for="b13">レンジ</label>
+						<input type="checkbox" id="b14" /><label for="b14">調理</label>
+						<input type="checkbox" id="b15" /><label for="b15">クリーン</label>
+						<input type="checkbox" id="b16" /><label for="b16">空調換気</label>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="checkbox" id="c12" /><label for="c12">管球</label>
+						<input type="checkbox" id="c13" /><label for="c13">照明器具</label>
+						<input type="checkbox" id="c14" /><label for="c14">電池</label>
+						<input type="checkbox" id="c15" /><label for="c15">TLET</label>
+						<input type="checkbox" id="c16" /><label for="c16">その他</label>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="登録"/><input type="submit" value="关闭"/></td>
+				</tr>
+			</table>
+	</body>
+</html>

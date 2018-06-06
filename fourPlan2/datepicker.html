@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>四半期施策计划</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	
+</head>
+
+<body>
+<div class="all_content">
+	<div class="nav">
+		<h1 class="the_title">4-1. 四半期施策の画面イメージ説明(営業担当用)</h1>
+		<p class="condition">
+			对象年月
+				<input type="text" placeholder="2017-10" id="start_month"/>
+				~
+				<input type="text" placeholder="2017-12" id="end_month"/>
+				<button id="prev">&lt;&lt;前月</button>
+				<button id="next">次月&gt;&gt;</button>
+		</p>
+		<div class="btnGroup2">
+			<p>検索条件<a href="#" id="hide_condition">隠す</a></p>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>支社</td>
+					<td><select name="">
+						<option value="">111</option>
+						<option value="">222</option>
+						<option value="">333</option>
+					</select></td>
+					<td>企業</td>
+					<td><select name="">
+						<option value="">111</option>
+						<option value="">222</option>
+						<option value="">333</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>グループ</td>
+					<td><select name="">
+						<option value="">111</option>
+						<option value="">222</option>
+						<option value="">333</option>
+					</select></td>
+					<td>店舗</td>
+					<td><select name="">
+						<option value="">111</option>
+						<option value="">222</option>
+						<option value="">333</option>
+					</select></td>
+					<td></td>
+					<td><button class="jiansuo">检索</button></td>
+				</tr>
+			</table>
+		</div>
+		<div class="event_content">
+			<div class="status">
+				<div class="smallIcon">
+					<span>提案</span><br />
+					<span>
+						<i class="icon iconfont icon-triangle-copy"></i>
+						<i class="icon iconfont icon-triangle-copy"></i>
+					</span>
+				</div>
+				<div class="smallIcon">
+					<span>合意</span><br />
+					<span>
+						<i class="icon iconfont icon-yuanxing"></i>
+						<i class="icon iconfont icon-yuanxing"></i>
+					</span>
+				</div>
+				<div class="smallIcon">
+					<span>实施</span><br />
+					<span>
+						<i class="icon iconfont icon-xingxing"></i>
+						<i class="icon iconfont icon-xingxing"></i>
+					</span>
+				</div>
+				<p>※青色は予定、ピンクは実績</p>
+			</div>
+			<div class="btnGroup3">
+				<span class="sub_title">施策</span>
+				
+					<!--<div id="btn1" >
+						<select id="xxx" >
+							<option value="">勉強会1</option>
+							<option value="">勉強会2</option>
+							<option value="">勉強会3</option>
+						</select>
+					<input id="aaa" placeholder="qqq"/>
+					</div>-->
+					<select name="" id="btn1">
+						<option value="">勉強会1</option>
+						<option value="">勉強会2</option>
+						<option value="">勉強会3</option>
+					</select>
+					<select name="" id="btn2">
+						<option value="">提案1</option>
+						<option value="">提案2</option>
+						<option value="">提案3</option>
+					</select>
+					<select name="" id="btn3">
+						<option value="">山積み1</option>
+						<option value="">山積み2</option>
+						<option value="">山積み3</option>
+					</select>
+					<select name="" id="btn4">
+						<option value="">イベント1</option>
+						<option value="">イベント2</option>
+						<option value="">イベント3</option>
+					</select>
+					<select name="" id="btn5">
+						<option value="">その他1</option>
+						<option value="">その他2</option>
+						<option value="">その他3</option>
+					</select>
+					<!--<button id="btn1">勉強会</button>
+					<button id="btn2">提案</button>
+					<button id="btn3">山積み</button>
+					<button id="btn4">イベント</button>
+					<button id="btn5">その他</button>-->
+					<div class="innerBtn">
+						プロセス管理
+						<select>
+							<option value="">店铺外活动1</option>
+							<option value="">店铺外活动2</option>
+							<option value="">店铺外活动3</option>
+						</select>
+					</div>
+			</div>
+			<div class="last_button">
+				<button>出退勤カレンダーへ</button>
+				<button>日別活動進捗へ</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="wraper" id="wrap">
+		<!--<div class="tab">
+			<table>
+					<thead>
+						<tr>
+							<th>日</th>
+							<th>一</th>
+							<th>二</th>
+							<th>三</th>
+							<th>四</th>
+							<th>五</th>
+							<th>六</th>
+						</tr>
+					</thead>
+					<tbody>						
+					</tbody>				
+			</table>
+		</div> -->
+	</div>
+	<div class="bottom">
+		<ul class="btnGroup">
+			<li>複写元
+				<select name="" id="">
+					<option value="">A店</option>
+					<option value="">B店</option>
+					<option value="">C店</option>
+					<option value="">D店</option>
+					<option value="">E店</option>
+				</select>
+			</li>
+			<li class="last_choose">複写先
+				<select name="" id="">
+					<option value="">A店</option>
+					<option value="">B店</option>
+					<option value="">C店</option>
+					<option value="">D店</option>
+					<option value="">E店</option>
+				</select>
+				（複数選択）
+			</li>
+			<li><button>複写登録</button></li>
+			<li><button id="ykdl"><a target="_blank" href="ykdl.html">一括登録</a></button></li>
+			<li><button>スケジュール削除</button></li>
+			<li><button>印刷</button></li>
+		</ul>
+	</div>
+	<!-- 浮层框架开始 -->
+	<div id="bg"></div>
+	<div id="show">
+		<div id="chooseTime">
+			<button id="btnclose">关闭</button>
+			<h2>施策計画入力画面</h2>
+			<table id="chooseEvent">
+				<tr>
+					<td>店舗</td>
+					<td>
+						<select >
+							<option value="">A店</option>
+							<option value="">B店</option>
+							<option value="">C店</option>
+							<option value="">D店</option>
+							<option value="">E店</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>期間</td>
+					<td>
+						<input type="date" id="startTime"/><span id="bolang">~</span><input type="date" id="endTime"/>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="toast">时间输入有误！</td>
+				</tr>
+				<tr>
+					<td>施策</td>
+					<td>
+						<select name="" id="which_type">
+							<option value="施策">施策</option>
+							<option value="プロセス管理">プロセス管理</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>カテゴリ</td>
+					<td>
+						<select name="" id="eventType">
+							<option value="#ff0000" id="the_first">勉強会</option>
+							<option value="#ffcc00">提案</option>
+							<option value="#00ff99">山積み</option>
+							<option value="#00ccff">イベント</option>
+							<option value="#00ffff">その他</option>
+							<option value="#0f3" id="the_others">店舗外活動</option>
+						</select>
+						<!--<select name="" id="event_type">
+							<option value="#0f3">店舗外活動</option>
+						</select>-->
+					</td>
+				</tr>
+				<tr>
+					<td>内容</td>
+					<td>
+						<select >
+							<option value="">111</option>
+							<option value="">222</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>商品</td>
+					<td><input type="checkbox" id="すべて"/><label for="すべて">すべて</label></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="checkbox" id="pc"/><label for="pc">PC</label>
+						<input type="checkbox" id="tv"/><label for="tv">TV</label>
+						<input type="checkbox" id="ac"/><label for="ac">空调</label>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="checkbox" id="dvd"/><label for="dvd">DVD</label>
+						<input type="checkbox" id="fridge"/><label for="fridge">冰箱</label>
+						<input type="checkbox" id="washer"/><label for="washer">洗衣机</label>
+					</td>
+				</tr>
+			</table>
+			<button id="btnSave">保存</button>
+		</div>
+	</div>
+	<!-- 浮层框架结束-->
+	<!--<div class="showEdit">
+		<ul>
+			<li>111</li>
+			<li>222</li>
+		</ul>
+		<div class="editAndDel">
+			<button class="toEdit">edit</button>
+			<button class="toDel">del</button>
+		</div>
+	</div>-->
+	<!--编辑和删除-->
+	
+</div>	
+
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<script type="text/javascript" src='js/jquery.cookie.js'></script>
+	<script type="text/javascript" src='js/data.js'></script>
+	<script type="text/javascript" src='js/main.js'></script>
+
+	<script type="text/javascript">
+
+		var year = new Date().getFullYear(); 
+		var month = new Date().getMonth() +1;
+		var eventArr = $.cookie("eventInfo") ? JSON.parse($.cookie("eventInfo")) :[];
+		var flag;
+		initMonth();	//initialized
+		var disX;
+		var disY;
+		var startTime;
+		var endTime;
+		var unitWidth;
+		var addWidth = 0;
+		var showInfo = [];
+		var initLeft = $(".supplyHead").offset().left + $(".supplyHead").outerWidth() +9.5;
+
+		function initMonth() {			
+			year = mGetDate(year, month).split('-')[0];
+			month = mGetDate(year, month).split('-')[1];
+			$("#start_month").val( mGetDate(year, month) );
+			$("#end_month").val( mGetDate(year, month -0+2) );
+			$("#wrap").html(datepicker.buildUi(year, month));
+			showThreeMonth();	
+		};
+		function getWeek(year, month){	
+			var weekCount;
+			var firstWeekday = new Date(year, month -1, 1).getDay();////获取一个月的一号是周几？
+			var dayCount  = new Date(year, month, 0).getDate();//总天数
+			if(firstWeekday ==0) firstWeekday =7;
+			if(firstWeekday ==1){
+				weekCount = Math.ceil(dayCount/7)
+			}else{
+				var lastDays = dayCount -(8- firstWeekday);
+				weekCount = Math.ceil(lastDays/7);
+			}
+//			console.log(month + '月总天数:'+dayCount +'--'+'第一天是周几:'+firstWeekday+'--有几周：'+weekCount)
+			return weekCount;			
+		};
+		function mGetDate(year, month){
+			var yyy = new Date(year, month-1).getFullYear();
+			var mmm = new Date(year, month-1).getMonth() +1 ;
+			mmm = mmm <10 ?'0'+mmm :mmm;
+			return yyy +'-'+mmm;
+		};
+		
+		function showThreeMonth(){
+			var weekArr = [];
+			var monthArr = [];
+			$(".threeMonth").find("span").each(function(i){
+				$(this).html(mGetDate(year, month -0 +i));
+				var aaa = $(this).html().split('-')[0];
+				var bbb = $(this).html().split('-')[1];
+				weekArr.push( getWeek(aaa, bbb) );
+				if(getWeek(aaa, bbb) ==5){
+					$(this).parent().attr("colspan","35")
+				}
+			});
+			var prevWidth = Math.round( 700 *weekArr[0] /eval(weekArr.join('+')) );
+			var nextWidth = Math.round( 700 *weekArr[2] /eval(weekArr.join('+')) );
+			var weekWidth = Math.round( 700 /eval(weekArr.join('+')) ) +'px';
+			weekArr.forEach(function(val){
+				for(var i=0; i<val; i++){
+					monthArr.push(i+1)
+				}
+			});
+			if(monthArr.length - $(".fourteen span").length ==1){
+				$(".fourteen").append( $('<th colspan="7"><span></span>w</th>') );
+				$(".shopEvent").append( $('<td colspan="7"></td>') );
+			}else if( $(".fourteen span").length -monthArr.length ==1){
+				$(".fourteen").find(".lastW").remove();
+				$(".shopEvent").find(".lastW").remove();
+			}
+			$(".fourteen span").each(function(i){
+				$(this).html(monthArr[i])
+			});
+			unitWidth = 100/($(".fourteen span").length);
+			$(".fourteen th").css("width", weekWidth);
+			
+			//渲染事件到页面上
+			if(flag ==undefined) {
+				addWidth = 0;
+			}else if(flag ==true) {
+				addWidth += prevWidth;
+			}else if(flag ==false) {
+				addWidth -= nextWidth;
+			};
+			eventArr.forEach(function(val){
+				var span = $("<span class='showEvent' data-info='"+ val.spanInfo +"' data-id='"+ val.code +"'>"+ (val.spanInfo)[2]+ ' ' + (val.spanInfo)[3] +"</span>").appendTo($(".bor"));
+				span.css({"top":val.top, "left": parseInt(val.left)+ addWidth +'px' }).css({'width':val.width, "background": val.background});
+			})
+			flag = undefined;
+			hideEdit()
+		}
+		
+		$("#prev").click(function () {	//--
+			month--;
+			flag=true;
+			initMonth();
+		});
+		$("#next").click(function () {	//++
+			month++;
+			flag=false;
+			initMonth();
+		});
+		var fleet = true;
+		var delObj;
+		var heightArr =[0];
+		
+		function getPosition(){
+			heightArr =[0];
+			var sum = 0;
+			$(".context .shopEvent").each(function(){
+				heightArr.push( sum += $(this).height() );
+			});
+			$(".bor").height( sum -1);
+			return heightArr;
+		}
+		//
+		document.addEventListener("click",function(e){
+			if(e.target.className=="bor"){	//add
+				disY = e.offsetY;
+				heightArr = getPosition();
+				for(var i=0; i<heightArr.length -1; i++){
+					if(heightArr[i] < disY && disY <= heightArr[i+1]){
+						disY = heightArr[i] +10 +'px';
+//						console.log(disY)
+					}
+				}
+				window.trigger = true;
+				showdiv();
+			}else if(e.target.className =="showEvent"){	//弹出详细窗口
+				showInfo = (e.target.dataset.info).split(',');
+				window.trigger = false;
+				disX = e.target.style.left;
+				disY = e.target.style.top;
+				window.editID = e.target.dataset.id;
+				delObj = e.target;
+				if(fleet){
+					showEdit()
+				}else{
+					hideEdit()
+				}
+			
+			}else if(e.target.className =="toEdit"){	//跳转编辑
+				showdiv();
+				hideEdit();
+			}else if(e.target.className =="toDel"){		//删除
+				eventArr.forEach(function(val, index){
+					if(val.code ==editID){
+						eventArr.splice(index, 1);
+						$.cookie("eventInfo", JSON.stringify(eventArr), {expires:30,path:"/"});
+					}
+				});
+				delObj.remove();
+				hideEdit();
+			}else if(e.target.className =="icon iconfont icon-xinzeng"){	//关闭当前窗口
+				hideEdit();
+			}	
+		},false);
+		//
+		function showEdit(){
+			$(".showEdit").fadeIn();
+			$(".showEdit").css({"right":51- parseInt(disX) +'px', "top": '29px' });
+			fleet = false;
+			var selectedArr = [];
+			for(var i=3; i<showInfo.length; i++){
+				selectedArr.push(showInfo[i]);
+			}
+			$(".showEdit .the_title").html('活动：' +showInfo[2]);
+			$(".showEdit .the_time").html('时间：' +showInfo[0]+ '~' + showInfo[1]);
+			$(".showEdit .the_event").html('事件：'+ selectedArr.join(","));
+		}
+		function hideEdit(){
+			$(".showEdit").fadeOut();
+			showInfo = [];
+			fleet = true;
+		}
+		//
+		$("#startTime").focusout(function(){	//disX
+			startTime = $(this).val();
+			var targetTd = $("#mainTd").find("td");
+			for(var i=1; i<targetTd.length; i++){
+				if(startTime == format( new Date(monthData[0].year, monthData[0].month - 1, targetTd[i].dataset.date) )){
+					disX = (targetTd[i].offsetLeft -initLeft) -addWidth +'px';
+					return disX;
+				}
+			}
+			if(!disX){
+				alert("请重新选择开始日期！")
+			}
+		});
+		$("#which_type").change(function(){
+			if($("#which_type").val() =='プロセス管理'){
+				$("#eventType #the_others").attr("selected","selected")
+				$("#eventType #the_others").show().siblings().hide()
+			}else if($("#which_type").val() =='施策'){
+				$("#eventType #the_others").hide().siblings().show()
+			}
+		})
+		function format(date){	//输出格式化时间
+			var ret='';
+			var rightMonth = (date.getMonth() +1) <10 ?'0'+(date.getMonth() +1) : (date.getMonth() +1);
+			var rightDate = date.getDate() <10 ?'0'+date.getDate() :date.getDate();
+			ret += date.getFullYear() +'-';
+			ret += rightMonth +'-';
+			ret += rightDate;
+			return ret;
+		};
+		
+		$("#btnSave").click(function () {	//save
+			
+			var eventType = $("#eventType  option:selected").text();
+			startTime = $("#startTime").val();
+			endTime = $("#endTime").val();
+			var timeSpan = parseInt((Date.parse(endTime)- Date.parse(startTime))/(1000* 3600* 24));
+			var spanWidth = Math.round( timeSpan* unitWidth) +'px';
+			var str=[];
+			$("#chooseEvent input[type=checkbox]:checked").each(function(){
+				str.push( $(this)[0].labels[0].innerHTML) ;
+			});
+			if( timeSpan <=0 || startTime=='' || endTime=='' || disX==undefined){
+				$("#toast").show();
+			}else{
+				//存入cookie之前，先判断是否有相同定位的事件
+				eventArr.forEach(function(value){
+					if( value.top ==disY && (parseInt(value.left) <= parseInt(disX) && parseInt(disX) <= (parseInt(value.left)+ parseInt(value.width)) )){
+						//存在定位重合的事件条，需要撑开tr
+						console.log(new Date())
+						for(var i=0; i <heightArr.length; i++){
+							if( parseInt(disY) <= heightArr[i] ){
+								var addHeight = $(".context .shopEvent").eq(i-1).height();
+								addHeight +=30;
+								$(".context .shopEvent").eq(i-1).height(addHeight);
+								console.log( getPosition() );
+								disY = parseInt(disY) + 30 +'px';
+								console.log(disY+';'+ addHeight+';'+new Date());
+								return	
+							}
+						}
+		
+					}
+				});
+				var spanInfo = [startTime, endTime, eventType, str];
+				var code = Math.floor(Math.random()* 9000) +1000;
+				var span = $("<span class='showEvent' data-info='"+ spanInfo +"' data-id='"+ code +"'>"+ eventType+ ' ' + str +"</span>");
+				span.css({"top": disY, "left": disX, "width": spanWidth, "background":  $("#eventType").val() });
+				
+				if(trigger){	//新增				
+					$(".bor").append(span);
+				}else{		//编辑以后新增
+					eventArr.forEach(function(val, index){
+						if(val.code ==editID){
+							disX = val.left;
+							eventArr.splice(index, 1);
+							$.cookie("eventInfo", JSON.stringify(eventArr), {expires:30,path:"/"});
+						}
+					});
+					
+				}
+				eventArr.push({
+					spanInfo: spanInfo,
+					top: disY,
+					left: disX,
+					width: spanWidth,
+					background: span[0].style.background,
+					code: code
+				});
+				$.cookie("eventInfo", JSON.stringify(eventArr), {expires:30,path:"/"});
+//				year = new Date().getFullYear(); 
+//				month = new Date().getMonth() +1;
+//				initMonth();
+				hidediv();
+			}
+//			console.log(eventArr)
+		});
+		$("#btnclose").click(function () {	//close
+			hidediv()
+		});
+		function showdiv() {
+			$("#bg").show();
+			$("#show").show();
+			
+			$("html,body").css("overflow", "hidden");
+			var itemArr=[];			
+			$("#chooseEvent input[type=checkbox]").each(function(){
+				itemArr.push($(this)[0].labels[0].innerHTML);
+			});
+			$("#startTime").val( $("#prevMonth span").html()+ '-01' );
+			$("#endTime").val( $("#prevMonth span").html()+ '-01' );
+			
+			
+			if(showInfo.length >1){
+				$("#startTime").val(showInfo[0]);
+				$("#endTime").val(showInfo[1]);
+				showInfo.splice(0,3);
+				showInfo.forEach(function(val){
+					var index = itemArr.indexOf(val);
+					$("#chooseEvent input[type=checkbox]")[index].checked =true;
+				})
+			}
+		};
+		function hidediv() {
+			//clear
+			$("#startTime").val('');
+			$("#endTime").val('');
+			disX= undefined;
+			$("#chooseEvent input[type=checkbox]").each(function(){
+				$(this)[0].checked = false;
+			});
+			$("#toast").hide();
+			$("#bg").hide();
+			$("#show").hide();
+			$("html,body").css("overflow", "auto");
+		};
+		//
+		var hideShow = true
+		$("#hide_condition").click(function(){
+			if(hideShow){
+				$(".btnGroup2").height("26px")
+			}else{
+				$(".btnGroup2").height("100px")
+			}
+			hideShow = !hideShow
+		})
+	
+				
+	</script>
+</body>
+
+</html>

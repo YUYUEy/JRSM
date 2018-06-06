@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>得意店舗格付</title>
+		<style type="text/css">
+			*{
+				padding: 0; margin: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			table{
+				border-collapse: collapse;
+			}
+			.context{
+				width: 800px; height: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc;
+			}
+			.main{
+				width: 500px; height: 250px;
+				float: left;
+			}
+			.main .main_content{
+				height: 100px;
+			}
+			.main tr td{
+				padding: 5px; border: 1px solid #999;
+			}
+			.main tr:nth-child(1){
+				background: #66ccff;  text-align: center; height: 40px;
+			}
+			.transport{
+				float: left; margin: 120px 10px;
+				width: 40px; height: 30px; border: 1px solid #ccc;
+			}
+			.tab2{
+				width: 200px; height: 250px; float: left; text-align: center;
+			}
+			.tab2 tr:nth-child(1){
+				background: #ffccff;  height: 40px;
+			}
+			.tab2 tr td{
+				padding: 5px; border: 1px solid #999;
+			}
+			#login{
+				width: 80px; height: 30px; border: 1px solid #999; 
+				float: right; margin-right: 80px; margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="context">
+			<h2>得意店舗格付</h2>
+			<table class="main" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>得意</td>
+					<td>商品</td>
+					<td>ランク</td>
+					<td>店舗</td>
+				</tr>
+				<tr>
+					<td><button>全选择</button><button>全解除</button></td>
+					<td><button>全选择</button><button>全解除</button></td>
+					<td><button>全选择</button><button>全解除</button></td>
+					<td><button>全选择</button><button>全解除</button></td>
+				</tr>
+				<tr class="main_content">
+					<td>
+						<ul>
+							<li><input type="checkbox" id="a11" /><label for="a11">ヤマダ</label></li>
+							<li><input type="checkbox" id="a12" /><label for="a12">ビック</label></li>
+							<li><input type="checkbox" id="a13" /><label for="a13">ヨドバシ</label></li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li><input type="checkbox" id="b11" /><label for="b11">テレビ</label></li>
+							<li><input type="checkbox" id="b12" /><label for="b12">メディア</label></li>
+							<li><input type="checkbox" id="b13" /><label for="b13">電池</label></li>
+							<li><input type="checkbox" id="b14" /><label for="b14">照明器具</label></li>
+							<li><input type="checkbox" id="b15" /><label for="b15">その他</label></li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li><input type="checkbox" id="c11" /><label for="c11">T8</label></li>
+							<li><input type="checkbox" id="c12" /><label for="c12">T6</label></li>
+							<li><input type="checkbox" id="c13" /><label for="c13">T4</label></li>
+							<li><input type="checkbox" id="c14" /><label for="c14">T2</label></li>
+						</ul>
+					</td>
+					<td>
+						<ul>
+							<li><input type="checkbox" id="d11" /><label for="d11">ヤマダ北陸地店舗</label></li>
+							<li><input type="checkbox" id="d12" /><label for="d12">ヤマダ西近畿地店舗</label></li>
+							<li><input type="checkbox" id="d13" /><label for="d13">ヤマダ大阪地一店舗</label></li>
+							<li><input type="checkbox" id="d14" /><label for="d14">ヤマダ京滋地店舗</label></li>
+							<li><input type="checkbox" id="d15" /><label for="d15">ヤマダ四国地一店舗</label></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td><button>次</button></td>
+					<td><button>次</button></td>
+					<td><button>次</button></td>
+					<td></td>
+				</tr>
+			</table>
+			
+			<button class="transport">&gt;&gt;</button>
+			
+			<table class="tab2" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td>得意</td>
+					<td>店舗</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			
+			<button id="login">登录</button>
+		</div>
+	</body>
+</html>
