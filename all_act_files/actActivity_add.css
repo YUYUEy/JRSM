@@ -1,0 +1,20 @@
+.x-radio input[type="radio"]+label,.x-checkbox input[type="checkbox"]+label
+	{
+	display: inline-block;
+	left: 1.199em;
+	position: relative;
+	text-align: left;
+	margin: 0;
+	min-height: 1em;
+	font-size:12px; width:20px;
+	/* overflow: hidden; */
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	margin-right:70px;
+}
+.form-control {
+    border-radius: 5px;
+    box-shadow: none;
+    border-color: #d2d6de;
+    font-size:12px;
+}

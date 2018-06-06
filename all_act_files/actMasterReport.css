@@ -1,0 +1,15 @@
+.thumbnail{
+	margin-bottom:10px !important; padding:5px;
+}
+.row > div{
+	padding-left: 15px; padding-right:15px;
+}
+.mdm-function-bar{
+	border: 1px solid #ddd;
+    border-bottom: none;
+    padding: 4px 5px;
+    height: 35px;
+    /* background: #049BE2; */
+    background: #ffffff !important;
+    box-shadow: 0px 0px 0px 0px rgba(232, 232, 232, 1);
+}

@@ -1,0 +1,169 @@
+.wraper_four {
+	width: 1250px;
+    text-align: center; 
+    font-family: PingFangSC-Regular;
+	font-size: 12px;
+}
+
+.wraper_four .tab table {
+    border-collapse: collapse; table-layout:fixed; 
+    margin-left:3px;
+}
+.wraper_four .tab table th,
+.wraper_four .tab table td {
+    border: 1px solid #E6E5E6; box-sizing: border-box;
+}
+.wraper_four .tab table th {
+    height: 30px; width: 70px;
+    background: #f6f6f6; text-align: center; font-weight:100;
+    color: #666666;
+}
+
+.wraper_four .tab table td {
+    height: 30px;
+}
+.wraper_four .tab table #shop_man{
+	width: 80px !important;
+}
+.wraper_four .tab table #shop_list{
+	width:150px;
+}
+.wraper_four .tab table tbody .the_shopman{
+	/* width: 100px !important; */
+	 border:none; background: #f6f6f6;
+	color: #121212; text-align:left;
+}
+.wraper_four .tab table tbody .the_shopman span{
+	width: 80px; display:inline-block;
+   	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+    cursor: default;
+}
+/* .wraper_four .tab table tbody .the_shopman span:hover{
+	color: #f22e00;
+}
+.wraper_four .tab table tbody .supplyHead span:hover{
+	color: #f22e00;
+} */
+.wraper_four .tab table tbody .supplyHead{
+    background: #f6f6f6; text-align:left; color: #121212;
+}
+.wraper_four .tab table tbody .supplyHead span{
+    width: 150px; display:inline-block;
+   	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+    cursor: default;
+}
+
+#mainTd td{
+	height: 0px;border: none;background: transparent;
+}
+.firstW{
+	position: relative;
+}
+.firstW .bor{
+	width: 898px;height: 150px;
+	position: absolute;top: 29px;left: -1px;z-index: 111;overflow: hidden;
+	/* border: 1px solid red; */
+}
+.showEvent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;height: 20px;line-height: 18px;color:#fff; text-align: left;
+      box-sizing: border-box; border:1px solid #999;
+    /* overflow: hidden;  text-overflow: ellipsis;
+    white-space: nowrap; */
+    font-family: PingFangSC-Medium;
+	font-size: 12px;
+}
+.showEvent span{
+    position: absolute;
+    top: 0;
+    left: 0; padding-left:15px;
+    width: 100%;height: 100%;line-height: 18px;
+    box-sizing: border-box;
+    overflow: hidden;  text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.showEvent:hover {
+     cursor: pointer; overflow: visible;
+}
+.showEvent a {
+     width:15px; height:15px; position:absolute; right:0px; top:-6px;
+      border-radius: 50%; font-size:16px;line-height:14px; overflow:hidden;
+      background: #148ef5; color:#000; text-align:center;
+      display:none; z-index:111;
+}
+.showEvent .to_del{
+     top:10px;background: #148ef5;line-height:12px;
+}
+.showEvent:hover a{
+    cursor: pointer; display:block;
+}
+.showEvent>i {
+    position:absolute; left:0px;
+}
+.showEvent a i {
+    font-size:18px;
+    position:absolute; left:4px; top:-2px;
+}
+
+.firstW .showEdit{
+	width: 300px; height: 200px; border: 1px solid #aaa; border-radius: 5px; background: #fff;
+	position: absolute; top: 29px; left:0; z-index: 1000;
+	display:none;
+}
+.showEdit .the_info{
+	width: 100%; text-align: left; padding: 20px; margin-top:20px;
+	box-sizing: border-box;
+}
+.showEdit .the_info li{
+	height: 30px; overflow: hidden;  text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.showEdit .the_info .the_copy select{
+	width: 150px; height: 24px; border-radius:5px;
+}
+.showEdit .the_info .the_copy .copySave{
+	margin-left: 10px; width:50px; height:26px; border: 1px solid #aaa; border-radius: 5px; background: #148ef5; color: #fff;
+}
+.showEdit .the_info .the_copy label{
+	font-weight:100;
+}
+.showEdit .the_info .the_title{
+	font-size: 12px; font-weight: bold; height:45px; white-space: normal;
+}
+.showEdit .toClose{
+	position: absolute;top: 5px; right: 5px; cursor: pointer; font-size: 22px; 
+	transform: rotate(45deg);
+}
+
+#status_type,#selectGroup,#selectGroup2{
+	  float:left; margin-left:20px;margin-top:5px; height:24px; line-height:24px; border-left:1px solid #eee;
+}
+#status_type {
+	   margin-left:0px; border-left:none; color: #666666;
+}
+/* #status_type .the_triangle i{
+	  font-size:18px; display:block; float:right; margin-top:7px;
+} */
+#status_type i{
+	  line-height:12px;
+}
+#status_type li,#selectGroup li,#selectGroup2 li{
+	float:left; margin-left:10px;
+}
+#selectGroup .small_title,#selectGroup2 .small_title{
+	 color: #535353;
+}
+#selectGroup li button, #selectGroup2 li button{
+	 height:24px;width: 80px; border:none; border-radius:3px;color:#fff; line-height:14px; 
+	 margin-left:5px; margin-top:-3px; color:#000;
+}
+
+.form-control{
+	border-radius: 5px; height:30px; font-size:12px;
+}
