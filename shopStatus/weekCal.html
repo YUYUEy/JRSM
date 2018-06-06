@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>GPM用出退勤カレンダー</title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			ul,ol{list-style: none;}
+			table{border-collapse: collapse;}
+			.btnGroup li{
+				float: left; margin: 5px;
+			}
+			.btnGroup li button{
+				width: 100px; height: 30px; border-radius: 5px; border: 1px solid #f45;
+			}
+			.content{
+				width: 1200px; height: 500px; margin: 40px auto; border: 1px solid #f45;
+			}
+			.content table tr{
+				height: 40px; text-align: center;
+			}
+			.content table tr td{
+				width: 100px;
+			}
+			.content table tr .the_head{
+				background: lightyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>GPM用出退勤カレンダー</h1>
+		<ul class="btnGroup">
+			<li><label>週間<input type="text" value="2017-12-12" class="showDay"/></label></li>
+			<li><button class="prevWeek">前周</button></li>
+			<li><button class="prevDay">前日</button></li>
+			<li><button class="nextDay">翌日</button></li>
+			<li><button class="nextWeek">翌周</button></li>
+		</ul>
+		<div class="content">
+			<table id="monitor" border="1" cellpadding="0" cellspacing="0">
+			    <tr class="the_head">
+			      <td></td>
+			      <td>一</td>
+			      <td>二</td>
+			      <td>三</td>
+			      <td>四</td>
+			      <td>五</td>
+			      <td>六</td>
+			      <td>日</td>
+			    </tr>
+			    <tr class="the_body">
+			      <td></td>
+			      <td></td>
+			      <td></td>
+			      <td></td>
+			      <td></td>
+			      <td></td>
+			      <td></td>
+			      <td></td>
+			    </tr>
+			</table>
+		</div>
+		
+		<!-----------------------bodyEnd-->
+		<script src="js/jquery.js"></script>
+		<script type="text/javascript">
+	
+	      var currentFirstDate;
+	      var formatDate = function(date){       
+	        var year = date.getFullYear()+'-';
+	        var month = (date.getMonth()+1)+'-';
+	        var day = date.getDate();
+	        return year +month +day;
+	      };
+	      var addDate= function(date,n){    
+	        date.setDate(date.getDate()+n);    
+	        return date;
+	      };
+	      	var setDate = function(date){       
+		        var week = date.getDay()-1;
+		        date = addDate(date,week*-1);
+		        currentFirstDate = new Date(date);
+		 		for (var i=0; i<7; i++) {
+		 			$(".the_body td").eq(i+1).html(formatDate(i==0 ? date : addDate(date,1)).split('-')[2])
+		 		}
+		 		$(".showDay").val(formatDate(addDate(date,-6)))
+	      	};       
+	    
+	      setDate(new Date());
+		
+			$(".prevWeek").click(function(){		//week--
+				setDate(addDate(currentFirstDate,-7));    
+			})
+			$(".nextWeek").click(function(){		//week++
+				 setDate(addDate(currentFirstDate,7));
+			})
+			
+			initWeek();
+			function initWeek(){
+				var html='';
+				for (var j=0; j<7 *5; j++) {
+					if(j%7 === 0){
+						html += '<tr><td>山本</td>';
+					}
+					
+					html += '<td class="everyday"></td>';
+					if(j%7 === 6){
+						html += '</tr>'
+					}
+				}
+				$("#monitor").append(html)
+			}
+		</script>
+	</body>
+</html>

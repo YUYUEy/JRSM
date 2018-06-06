@@ -1,0 +1,149 @@
+/*公共样式、样式重置*/
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+ul li,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #6c6c6c;
+}
+
+a:hover {
+    color: #f22e00;
+}
+
+input {
+    outline: none;
+}
+
+th,
+i,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    color: #333;
+    font: 14px/22px Tahoma, Arial ;
+    background: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    word-wrap: break-word;
+    resize: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+/* reset--end */
+
+.header {
+	width: 100%;height: 140px;
+}
+.header .btnGroup li{
+	float: left; margin: 10px;
+}
+.header .btnGroup li #targetMonth{
+	width: 100px;
+}
+.header .status{
+	width: 160px; height: 70px; float: left; margin-left: 20px; margin-top: -10px;
+}
+.header .status .smallIcon{
+	float: left;text-align: center;line-height: 22px; width: 50px;
+}
+.header .status  p{
+	font-size: 12px; float: left;
+}
+.header .status .smallIcon i{
+	font-size: 26px;
+}
+
+.header .status .smallIcon i:nth-child(1){
+	color: #00c;
+}
+.header .status .smallIcon i:nth-child(2){
+	color: #f0f; margin-left: -8px;
+}
+
+.content #calendar {
+	text-align: center; border-collapse: collapse; margin-left: 20px;
+}
+.content table tr td{
+	min-width: 40px;
+	height: 40px; box-sizing: border-box;
+}
+.content table thead .theHead{
+	background: #0cf;
+}
+.content table tbody .theShop{
+	background: #ddd; min-width: 100px;
+}
+.content table .theCorner{
+	background: #0cf; position: relative;
+}
+.content table .theCorner #buju{
+	width: 1200px; height: 199px; border: 1px solid #f45; overflow: hidden;
+	position: absolute; left: 99px; top: 39px;
+}
+
+.content table .theCorner #buju i{
+	font-size: 40px; position: absolute;
+	width: 40px; height: 40px; display: block;
+}
+.content table .theCorner #buju i>span{
+	font-size: 14px; color: #fff;
+	position: absolute; top: 2px;left: 12px;
+}

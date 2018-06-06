@@ -1,0 +1,44 @@
+[
+	{
+		"theTime": "2017-12-25",
+		"whichShop": "E店",
+		"eventType": "勉強会",
+		"status": "C2",
+		"code": 5234
+	},
+	{
+		"theTime": "2017-12-14",
+		"whichShop": "C店",
+		"eventType": "提案",
+		"status": "A1",
+		"code": 6457
+	},
+	{
+		"theTime": "2018-01-11",
+		"whichShop": "A店",
+		"eventType": "提案",
+		"status": "A2",
+		"code": 8793
+	},
+	{
+		"theTime": "2017-12-11",
+		"whichShop": "F店",
+		"eventType": "提案",
+		"status": "B1",
+		"code": 9877
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "A店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 6363
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "A店",
+		"eventType": "提案",
+		"status": "A2",
+		"code": 4245
+	}
+]

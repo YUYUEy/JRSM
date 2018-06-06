@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>shopStatus</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		
+	</head>
+	<body>
+		<div class="header">
+			<h1>日別活動スケジュール</h1>
+			<ul class="btnGroup">
+				<li><label>目标月份<input type="text" id="targetMonth"/></label></li>
+				<li><button id="prev_month">&lt;&lt;先月</button></li>
+				<li><button id="next_month">&gt;&gt;翌月</button></li>
+				<li><button id="PrevPage">上一页</button></li>
+				<li><button id="nextPage">下一页</button></li>
+				<li>第<input id="showPage" type="text" value="1" style="width: 20px;text-align: center;"/>页，共6页</li>
+			</ul>
+			<div class="status">
+				<div class="smallIcon">
+					<span>提案</span><br />
+					<span>
+						<i class="icon iconfont icon-triangle-copy"></i>
+						<i class="icon iconfont icon-triangle-copy"></i>
+					</span>
+				</div>
+				<div class="smallIcon">
+					<span>合意</span><br />
+					<span>
+						<i class="icon iconfont icon-yuanxing"></i>
+						<i class="icon iconfont icon-yuanxing"></i>
+					</span>
+				</div>
+				<div class="smallIcon">
+					<span>实施</span><br />
+					<span>
+						<i class="icon iconfont icon-xingxing"></i>
+						<i class="icon iconfont icon-xingxing"></i>
+					</span>
+				</div>
+				<p>※青色は予定、ピンクは実績</p>
+			</div>
+		</div>
+		<div class="content">
+			<table border="1" cellspacing="0" cellpadding="0" id="calendar">
+				<!--<tr><td>Header</td></tr>
+				<tr><td>Data</td></tr>-->
+			</table>
+		</div>
+		
+		<!--*********************body---end********************************-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	
+	var year = new Date().getFullYear();
+	var month = new Date().getMonth() +1;
+	var shopList = 65;
+	var disY;
+	var iconClass = [
+						"icon iconfont icon-triangle-copy",
+						"icon iconfont icon-yuanxing",
+						"icon iconfont icon-xingxing"
+					];
+	var eventArr = [
+	{
+		"theTime": "2017-12-25",
+		"whichShop": "E店",
+		"eventType": "勉強会",
+		"status": "C2",
+		"code": 5234
+	},
+	{
+		"theTime": "2017-12-25",
+		"whichShop": "E店",
+		"eventType": "勉強会",
+		"status": "C2",
+		"code": 5234
+	},
+	{
+		"theTime": "2017-12-14",
+		"whichShop": "C店",
+		"eventType": "提案",
+		"status": "A1",
+		"code": 6457
+	},
+	{
+		"theTime": "2018-01-11",
+		"whichShop": "A店",
+		"eventType": "提案",
+		"status": "A2",
+		"code": 8793
+	},
+	{
+		"theTime": "2017-12-11",
+		"whichShop": "F店",
+		"eventType": "提案",
+		"status": "B1",
+		"code": 9877
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "C店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 2543
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "C店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 6363
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "C店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 6363
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "A店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 2543
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "A店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 6363
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "A店",
+		"eventType": "勉強会",
+		"status": "B1",
+		"code": 8797
+	},
+	{
+		"theTime": "2017-12-19",
+		"whichShop": "A店",
+		"eventType": "提案",
+		"status": "A2",
+		"code": 4245
+	}
+];
+sort(eventArr);
+//
+//	$.get("shopStatusArr.json", function(data){
+//		eventArr = data;
+//		sort(eventArr);
+//		initMonth()
+//	})
+	initMonth();
+	function sort(eventArr){
+		for (var k=0; k<eventArr.length-1; k++) { //根据开始时间来升序排序
+			for (var m=0; m<eventArr.length-1-k; m++) {
+				if ( (eventArr[m].theTime) > (eventArr[m+1].theTime) ) {
+					var tmp =  eventArr[m] ;
+					 eventArr[m]= eventArr[m+1];
+					eventArr[m+1]= tmp;
+				}
+			}
+		}
+	}
+	$("#prev_month").click(function () {	//prevMonth
+		month--;
+		initMonth();
+	});
+	$("#next_month").click(function () {	//nextMonth
+		month++;
+		initMonth();
+	});
+	//
+	function initMonth() {
+		year = mGetDate(year, month).split('-')[0];
+		month = mGetDate(year, month).split('-')[1];
+		$("#targetMonth").val( mGetDate(year, month) );
+  		var monthLength = ( new Date(year, month, 0).getDate());
+  		//table渲染页面
+		var html = '<thead><tr class="theHead"><td class="theCorner"><div id="buju"></div></td>';
+						for(var k=1; k<monthLength+ 1; k++){
+							html += '<td>'+ k +'日</td>';
+						};
+			html += '</tr></thead><tbody>';
+				for(var i=0; i<5; i++){
+					html +=	'<tr><td class="theShop">'+ String.fromCharCode(shopList +i) +'店</td>';
+						for(var k=1; k<monthLength+ 1; k++){
+							html += '<td></td>';
+						};
+					html +='</tr>';
+				};
+			html += '</tbody>';
+		$("#calendar").html(html);
+		$("#buju").width(monthLength *40 -1);
+		var firstDay =  format(new Date(year, month-1, 1));
+		var lastDay =  format(new Date(year, month, 0));
+		//
+		var leftArr =[];
+		eventArr.forEach(function(val){
+			var initTop = getPosition( val.whichShop );
+			if(firstDay <=val.theTime && val.theTime <=lastDay && initTop){		//在当前页面内，才会计算位置
+				var index = val.theTime.split('-')[2];
+				var initLeft =  $(".theHead td")[index].offsetLeft - $(".theHead .theCorner").width();		//初始位置
+				var count = 0;
+				leftArr.forEach(function(value){
+					if(initLeft ==value.initLeft && initTop == value.initTop){
+						initLeft +=40;
+						count ++;
+					}
+				});
+				console.log('进来次数：'+count);
+				if(count !=0) $(".theHead td").eq(index).width( $(".theHead td").eq(index).width()+40 );
+				console.log(  $(this) )
+			}
+			
+			//
+			if(initLeft && initTop){
+				var spanInfo = [val.theTime, val.whichShop, val.eventType, val.code];
+				var eventIcon = $("<i data-info='"+ spanInfo +"'><span>"+ val.eventType.split("")[0] +"</span></i>").appendTo($("#buju"));
+				['A', 'B', 'C'].forEach(function(value, index){
+					if( val.status.split("")[0] ==value ){
+						eventIcon.addClass( iconClass[index] );
+					}
+				});
+				if(val.status.split("")[1] ==1) {
+					eventIcon.css("color", "#f0f");
+				}else{
+					eventIcon.css("color", "#00c");
+				}
+				eventIcon.css({"top": initTop +'px', "left": initLeft +'px'});
+				leftArr.push({
+					initTop: initTop,
+					initLeft: initLeft
+				})
+			}
+		});
+	
+		$("#buju").width( $(".theHead ").width()-101 );
+	}
+	console.log(  $(".theHead .theCorner").width() )
+	function mGetDate(year, month){
+		var yyy = new Date(year, month-1).getFullYear();
+		var mmm = new Date(year, month-1).getMonth() +1 ;
+		mmm = mmm <10 ?'0'+mmm :mmm;
+		return yyy +'-'+mmm;
+	};
+	function format(date){	//输出格式化时间
+		var rightMonth = (date.getMonth() +1) <10 ?'0'+(date.getMonth() +1) : (date.getMonth() +1);
+		var rightDate = date.getDate() <10 ?'0'+date.getDate() :date.getDate();
+		var ret = date.getFullYear() +'-'+ rightMonth +'-'+ rightDate;
+		return ret;
+	};
+	//
+	function getPosition(whichShop){
+		disY = undefined;
+		$("tbody tr").each(function(){
+			var eachTop = $(this).get(0).offsetTop - 40; // 每个tr相对context的高度；
+			if($(this).find(".theShop").html() ==whichShop){
+				disY = eachTop +10;
+			}
+		});
+		return disY
+	}
+	//
+	$("#PrevPage").click(function(){
+		shopList -=5;
+		$("#showPage").val($("#showPage").val()-1)
+		if(shopList <=65){
+			shopList = 65;
+			$("#showPage").val(1)
+		};
+		initMonth()
+	});
+	$("#nextPage").click(function(){
+		shopList +=5;
+		$("#showPage").val($("#showPage").val()-0+1)
+		if(shopList >=86) {
+			shopList = 86;
+			$("#showPage").val(6)
+		}
+		initMonth()
+	})
+</script>
+	</body>
+</html>
+
+
