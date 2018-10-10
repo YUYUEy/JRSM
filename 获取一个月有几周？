@@ -1,0 +1,13 @@
+function getWeek(year, month){
+		var weekCount;
+		var firstWeekday = new Date(year, month -1, 1).getDay();////获取一个月的一号是周几？
+		var dayCount  = new Date(year, month, 0).getDate();//总天数
+		if(firstWeekday ===0) firstWeekday =7;
+		if(firstWeekday ===1){
+			weekCount = Math.ceil(dayCount/7);
+		}else{
+			var lastDays = dayCount -(8- firstWeekday);
+			weekCount = Math.ceil(lastDays/7);
+		}
+		return weekCount;			
+	}
