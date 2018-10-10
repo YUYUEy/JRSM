@@ -1,0 +1,8 @@
+function getwhichDay(year, month){
+          var firstWeekday = new Date(year, month -1, 1).getDay();////获取一个月的一号是周几？
+          //获取一个月的周一是几号？
+          firstWeekday =firstWeekday ||7;
+          var whichDay = (9- firstWeekday )%7;  
+          whichDay = whichDay ||7;
+          return whichDay;     
+      }
