@@ -23,12 +23,16 @@
 	onload = function(){
 		//遍历HTML元素下面的所有元素
 		var root =document.getElementsByTagName('html');
-		var iterator =document.createNodeIterator(root[0],NodeFilter.SHOW_ELEMENT,null, false);
+		var filter = function(node){		//如果只想返回遍历中遇到的li元素
+			return node.tagName.toLowerCase() =='li' ?NodeFilter.FILTER_ACCEPT :NodeFilter.FILTER_SKIP;
+		}
+		var iterator =document.createNodeIterator(root[0],NodeFilter.SHOW_ELEMENT, filter, false);
 		var node = iterator.nextNode();
-		while(node != null){
+		while(node != null){			
 			console.log(node.tagName);
+			console.log(node.textContent);//textContent
+
 			node = iterator.nextNode();
 		}
-		debugger
 	}
 </script>
