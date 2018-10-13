@@ -26,6 +26,8 @@
 		var filter = function(node){		//如果只想返回遍历中遇到的li元素
 			return node.tagName.toLowerCase() =='li' ?NodeFilter.FILTER_ACCEPT :NodeFilter.FILTER_SKIP;
 		}
+		
+		//第一种方法NodeIterator遍历HTML元素---------------------
 		var iterator =document.createNodeIterator(root[0],NodeFilter.SHOW_ELEMENT, filter, false);
 		var node = iterator.nextNode();
 		while(node != null){			
@@ -33,6 +35,15 @@
 			console.log(node.textContent);//textContent
 
 			node = iterator.nextNode();
+		}
+		
+		//第二种方法treeWalker遍历HTML元素-----------------
+		var walker=document.createTreeWalker(root[0],NodeFilter.SHOW_ELEMENT,null,false);
+		var node2 =walker.nextNode();
+		while(node2 !=null){
+			console.log(node2.tagName);
+			// console.log(node2.textContent);//打印元素内容
+			node2 =walker.nextNode();
 		}
 	}
 </script>
