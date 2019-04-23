@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示一年的日历</title>
+  
+    <script src="js/jquery.js"></script>
+    <style>
+        .wraper{
+            float: left; padding: 15px;
+        }
+         .wraper  table {
+            margin: 0 auto;border-collapse: collapse;
+        }
+        .wraper  table th,
+         .wraper  table td {
+            border: 1px solid #aaa;
+            width: 40px;text-align: center;
+        }
+         .wraper  table th {
+            height: 30px;
+            background: #e4e4e4;
+        }
+        .wraper  table td {
+            height: 40px;
+        }
+        .wraper span{
+            font-size: 16px;font-weight: 600;
+        }
+    </style>
+   
+    
+</head>
+<body>
+
+<span>対象年月</span>
+                <select name="getYear" id="inputMonth">
+                    <option value="">2014</option>
+                    <option value="">2015</option>
+                    <option value="">2016</option>
+                    <option value="">2017</option>
+                    <option value="">2018</option>
+                    <option value="">2019</option>
+                    <option value="">2020</option>
+                    <option value="">2021</option>
+                    <option value="">2022</option>
+                    <option value="">2023</option>
+                    <option value="">2024</option>
+                    <!-- <option value="" selected="selected">2019-12</option> -->
+                </select>
+
+<hr>
+
+<div id="showCalendar" ></div>
+        
+
+</body>
+</html>
+
+<script type="text/javascript">
+    	
+$(window).on('load', function () {
+    //
+    $("#inputMonth").change(function(){ //下拉框选中月份，initmonth渲染页面
+            var yyyy= $("#inputMonth option:selected").text();
+            // var mm= $("#inputMonth option:selected").text().split('-')[1];
+            // debugger
+            $("#showCalendar").html('');
+            for(var i=1;i<13;i++){
+             $("#showCalendar").append(getHtml(yyyy,i))
+            }
+            
+        });
+   
+    
+    ////获取一个月的一号是周几？？
+    function getFirstDayOFMonth(yyyy,mm){
+        return new Date(yyyy, mm-1, 1).getDay()
+    }
+  
+    //获取一个月有几天？
+    function mGetDate(year, month){
+        var d = new Date(year, month, 0);
+        return d.getDate();
+    }
+    //
+    function getHtml(yyyy,mm){
+        var FirstDayOFMonth = getFirstDayOFMonth(yyyy,mm);
+        // if(FirstDayOFMonth===0) FirstDayOFMonth=7;
+        var len = mGetDate(yyyy,mm);
+        //开始和结束的下标记
+        var start =FirstDayOFMonth ,end =FirstDayOFMonth +len;
+        debugger
+        var html = '<div class="wraper"><span>'+ mm +'</span><table><thead>'+
+            '<tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr>'+
+            '</thead><tbody class="contextFull">';
+        for(var i=0; i < 42; i++){
+            if(i%7 === 0){
+                html += '<tr>';
+            }
+            if((start <=i)&&(i<end)){
+                html += '<td class="fullTd">'+ String(i+1-FirstDayOFMonth); +'</td>';               
+            }else{
+                html += '<td class="fullTd"></td>';
+            }                                  
+            if(i%7 === 6){
+                html += '</tr>';
+            }
+        }
+        html+='</tbody></table></div>';
+        return html;
+    }
+});
+    	
+</script>
